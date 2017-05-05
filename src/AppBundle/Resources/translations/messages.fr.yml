@@ -1,0 +1,26 @@
+users: %count% Utilisateur | %count% Utilisateurs
+contact.title: contactez-nous
+choice.form.subject.placeholder: Choissisez un sujet
+
+home: Acceuil
+
+stock:
+    title: Stock
+    add: Ajouter en stock
+    delete: retirer du stock
+
+product:
+    new: Nouveau produit
+    all: Produits
+    succes: le produit a été bien ajouté.
+    show  : Afficher le produit
+    inStock : Le produit est en stock
+
+token:
+    invalide: le token n'est pas valide
+
+reference: Reférence
+nameProcut : Libellé
+purchasingPrice: Prix d'achat
+sellingPrice: Prix de vente
+tvaRate: Taux TVA

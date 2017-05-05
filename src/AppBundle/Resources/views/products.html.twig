@@ -1,0 +1,41 @@
+{% extends 'AppBundle::base.html.twig' %}
+{% block body %}
+
+<table class="table">
+
+    <thead>
+
+    <tr>
+        <th>{{ "reference"| trans }}</th>
+        <th>{{ "nameProcut"| trans }}</th>
+        <th>{{ "purchasingPrice"| trans }}</th>
+        <th>{{ "sellingPrice"| trans }}</th>
+        <th>{{ "tvaRate"| trans }}</th>
+        <th> Detail </th>
+
+
+    </thead>
+
+    <tbody>
+
+    {%for product in products %}
+        <tr>
+            <td>{{product.reference}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.purchasingPrice}}</td>
+            <td>{{product.sellingPrice }}</td>
+            <td>{{product.tvaRate }}</td>
+            <td>
+
+                <a class=" btn btn-default"  href="{{ path('showProduct',{'id': product.id}) }}" > {{ "product.show" | trans}} </a>
+            </td>
+
+        </tr>
+
+    {%endfor%}
+
+    </tbody>
+
+    {% endblock %}
+
+

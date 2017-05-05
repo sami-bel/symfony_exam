@@ -1,0 +1,30 @@
+{% extends 'AppBundle::base.html.twig' %}
+{% block body %}
+
+
+
+    <div class="well well-sm">
+
+        <ul class="list-group">
+            <li class="list-group-item"><strong>{{ "reference" | trans }} : </strong> {{ product.reference }} </li>
+            <li class="list-group-item"><strong>{{ "nameProcut" | trans}} :  </strong>{{ product.name}} </li>
+            <li class="list-group-item"><strong>{{ "purchasingPrice" |trans }} :</strong> {{ product.purchasingPrice}} </li>
+            <li class="list-group-item"><strong>{{ "sellingPrice" | trans }} : </strong>{{ product.sellingPrice }}</li>
+            <li class="list-group-item"><strong>{{ "tvaRate" |trans }} :</strong>{{ product.tvaRate }} %</li>
+        </ul>
+        {% if product.inStock %}
+           <div> {{ "product.inStock" | trans }}</div>
+        {% endif %}
+
+        {% if (is_granted('ROLE_RESP') == true or is_granted('ROLE_ADMIN') == true) and product.inStock == false %}
+            <a class=" btn btn-primary"  href="{{ path('addToStock', {'id': product.id, 'token':csrf_token('addProduct' ~ product.id)  }) }}"> {{ "stock.add" | trans }} </a>
+        {% endif %}
+
+        {% if (is_granted('ROLE_MAGAZ') == true or is_granted('ROLE_ADMIN') == true) and product.inStock == true  %}
+            <a class=" btn btn-primary"  href="{{ path('deleteFromStock', {'id': product.id, 'token': csrf_token('deleteProduct' ~ product.id) }) }}"> {{ "stock.delete" | trans }} </a>
+        {% endif %}
+
+    </div>
+{% endblock %}
+
+

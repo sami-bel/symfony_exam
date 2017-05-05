@@ -1,0 +1,27 @@
+users: %count% User |%count% Users
+contact.title: contact us
+choice.form.subject.placeholder: choice a subject
+
+
+home: Home
+
+stock:
+    title: Stock
+    add: Add to Stock
+    delete: delete from Stock
+product:
+    new: Create product
+    all: Products
+    succes: the product has been added.
+    show  : show product
+    inStock : This Product is in Stock
+
+token:
+    invalide: token is not valid
+
+reference: Reference
+nameProcut : Name
+purchasingPrice: Purchasing price
+sellingPrice: Selling price
+tvaRate: TVA Rate
+
